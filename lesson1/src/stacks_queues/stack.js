@@ -9,6 +9,8 @@ class Stack {
    */
   push(value) {
     // todo: do stuff
+    this.stack[this.top] = value
+    this.top++
   }
 
   /*
@@ -16,6 +18,18 @@ class Stack {
    */
   pop() {
     // todo: do stuff
+    if (this.top <= 0) {
+      return false
+    }
+    var popElement = this.stack[this.top - 1]
+
+    for (var i = 0; i < this.top; i++) {
+      var newStack = this.stack[i]
+    }
+    this.stack = newStack
+    this.top--
+      return popElement
+
   }
 
   /*
@@ -23,6 +37,8 @@ class Stack {
    */
   peek() {
     // todo: do stuff
+    return this.stack[this.top - 1]
+
   }
 
   /*
@@ -38,6 +54,11 @@ class Stack {
    */
   isEmpty() {
     // todo: do stuff
+    if (this.top <= 0) {
+      return false
+    } else {
+      return true
+    }
   }
 
 }
