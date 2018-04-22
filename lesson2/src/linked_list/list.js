@@ -24,6 +24,16 @@ class LinkedList {
 
     //todo: implement 🦑
 
+    if (this.head === null) {
+      this.head = node
+    } else {
+      var cuurentNode = head
+      while (cuurentNode.next) {
+        cuurentNode = cuurentNode.next
+      }
+      cuurentNode.next = node
+    }
+    this.length++
   }
 
   /*
@@ -34,6 +44,13 @@ class LinkedList {
     // first create a Node with the data
     let node = new Node(data);
     //todo: implement 🦑
+    var cuurentNode = this.head,
+      previousNode
+
+    node.next = cuurentNode
+    this.head = node
+
+    this.length++
   }
 
   /*
@@ -43,6 +60,18 @@ class LinkedList {
    */
   remove(data) {
     //todo: implement 🦑
+    var cuurentNode = head
+    var prevoiousNode
+    if (cuurentNode.data === data) {
+      this.head = cuurentNode.next
+    } else {
+      while (cuurentNode.data !== data) {
+        prevoiousNode = cuurentNode
+        cuurentNode = cuurentNode.next
+      }
+      prevoiousNode.next = cuurentNode.next
+    }
+    this.length--
   }
 
   /*
